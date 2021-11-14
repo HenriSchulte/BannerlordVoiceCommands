@@ -1,0 +1,6 @@
+azure-cognitiveservices-speech==1.19.0
+azure-identity==1.6.0
+azure-keyvault-secrets==4.2.0
+PyDirectInput==1.0.4
+pynput==1.7.4
+simpleaudio==1.0.4

@@ -1,0 +1,44 @@
+{
+    "authentication": {
+        "keyVaultName": "",
+        "luisKeySecretName": "",
+        "luisEndpointSecretName": "",
+        "luisRegion": ""
+    },
+    "buttonMapping": {
+        "units": {
+            "everyone": "0",
+            "infantry": "1",
+            "archers": "2",
+            "cavalry": "3",
+            "horseArchers": "4"
+        },
+        "formations": {
+            "line": "f1",
+            "shieldWall": "f2",
+            "loose": "f3",
+            "circle": "f4",
+            "square": "f5",
+            "skein": "f6",
+            "column": "f7",
+            "scatter": "f8"
+        },
+        "intents": {
+            "follow": ["f1", "f2"],
+            "charge": ["f1", "f3"],
+            "advance": ["f1", "f4"],
+            "fallBack": ["f1", "f5"],
+            "stop": ["f1", "f6"],
+            "retreat": ["f1", "f7"],
+            "faceEnemy": ["f2", "f2"],
+            "createFormation": ["f3"],
+            "fireAtWill": ["f4"],
+            "holdFire": ["f4"],
+            "mount": ["f5"],
+            "dismount": ["f5"],
+            "delegateCommand": ["f6"],
+            "assumeCommand": ["f6"]
+        }
+    },
+    "debugMode": "False"
+}
