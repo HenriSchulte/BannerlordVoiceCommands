@@ -81,8 +81,8 @@ def recognize_intent():
 def extract_entities(entities):
     formation_entities = []
     unit_entities = []
-    if len(entities) > 2:
-        raise Exception(f'Found an unsupported amount of entities ({len(entities)}). Should be two or less.')
+    if len(entities) > 2 or len(entities) < 1:
+        raise Exception(f'Found an unsupported amount of entities ({len(entities)}). Should be one or two.')
     for entity in entities:
         entity_name = entity['entity']
         child_count = len(entity['children'])
