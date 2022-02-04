@@ -11,7 +11,11 @@
             "infantry": "1",
             "archers": "2",
             "cavalry": "3",
-            "horseArchers": "4"
+            "horseArchers": "4",
+            "unit5": "5",
+            "unit6": "6",
+            "unit7": "7",
+            "unit8": "8"
         },
         "formations": {
             "line": "f1",
