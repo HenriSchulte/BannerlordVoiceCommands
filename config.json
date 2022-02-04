@@ -28,6 +28,7 @@
             "scatter": "f8"
         },
         "intents": {
+            "moveToPosition": ["f1", "f1"],
             "follow": ["f1", "f2"],
             "charge": ["f1", "f3"],
             "advance": ["f1", "f4"],
