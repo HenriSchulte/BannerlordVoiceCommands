@@ -27,7 +27,12 @@ def initialize_luis():
 
     # Initialize Key Vault client
     key_vault_uri = f"https://{key_vault_name}.vault.azure.net"
-    az_credential = DefaultAzureCredential()
+    az_credential = DefaultAzureCredential(
+        # excluding unused auth methods
+        exclude_cli_credential=True,
+        exclude_environment_credential=True,
+        exclude_managed_identity_credential=True
+    )
     secret_client = SecretClient(vault_url=key_vault_uri, credential=az_credential)
 
     # Get LUIS prediction key from Key Vault
@@ -106,10 +111,12 @@ def extract_entities(entities):
 
 # Press unit selection key
 def select_unit(unit_entities):
-    unit = unit_entities[0]['children'][0]['type']
-    key = read_config('buttonMapping', 'units', unit)
-    press_keys(key)
-
+    try:
+        unit = unit_entities[0]['children'][0]['type']
+        key = read_config('buttonMapping', 'units', unit)
+        press_keys(key)
+    except Exception as e:
+        print(f"Failed to select unit. Unit_entities: {unit_entities}")
 
 # Press command selection key
 def select_command(intent, formation_entity):
@@ -162,6 +169,6 @@ if __name__ == '__main__':
     initialize_luis()
 
     # Start the mouse click listener
-    print('Listening for mouse click...')
+    print('Waiting for trigger...')
     with mouse.Listener(on_click=on_click) as listener:
         listener.join()
