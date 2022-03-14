@@ -1,0 +1,271 @@
+
+> LUIS application information
+> !# @app.name = bannerlord-voice-commands
+> !# @app.versionId = 0.1
+> !# @app.culture = en-us
+> !# @app.luis_schema_version = 7.0.0
+> !# @app.tokenizerVersion = 1.0.0
+
+
+> # Intent definitions
+
+# advance
+- {@unit={@archers=archers}} forward
+- {@unit={@archers=archers}}, get closer!
+- {@unit={@cavalry=cavalry}}, move to enemy!
+- {@unit={@everyone=everyone}}, close in!
+- {@unit={@infantry=footmen}} advance
+- {@unit={@unit6=formation six}} move forward
+- {@unit={@unit8=group eight}} advance
+- {@unit={@cavalry=horsemen}} advance
+- {@unit={@infantry=infantry}}, advance!
+- {@unit={@horseArchers=mounted archers}} advance
+- {@unit={@horseArchers=mounted archers}} move forward
+
+
+# assumeCommand
+- {@unit={@archers=archers}}, listen up
+- {@unit={@cavalry=cavalry}}, on my command
+- {@unit={@unit5=group five}} on my command
+- {@unit={@cavalry=horsemen}} listen to me
+- {@unit={@infantry=infantry}}, i'm in charge
+- {@unit={@everyone=soldiers}}, listen to me
+
+
+# charge
+- {@unit={@archers=archers}} attack
+- {@unit={@archers=archers}} charge
+- {@unit={@cavalry=cavalry}} charge
+- {@unit={@cavalry=cavalry}} kill them all
+- {@unit={@everyone=everyone}} charge
+- {@unit={@everyone=everyone}}, attack!
+- {@unit={@infantry=infantry}}, charge
+- {@unit={@infantry=infantry}}, charge!
+- {@unit={@horseArchers=mounted archers}} charge
+- {@unit={@horseArchers=mounted archers}} no mercy
+
+
+# createFormation
+- {@unit={@archers=archer}} {@formation={@loose=spread out}}
+- {@unit={@archers=archers}} {@formation={@loose=stand apart}}
+- {@unit={@archers=archers}}, form a {@formation={@column=column}}!
+- {@unit={@archers=archers}}, make a {@formation={@skein=skein}}
+- {@unit={@archers=archers}}, {@formation={@scatter=scatter}}!
+- {@unit={@archers=bowmen}}, {@formation={@loose=loose}} formation!
+- {@unit={@cavalry=cavalry}} fomer {@formation={@skein=v shape}}
+- {@unit={@cavalry=cavalry}}, form a {@formation={@circle=circle}}!
+- {@unit={@cavalry=cavalry}}, {@formation={@loose=spread out}}!
+- {@unit={@everyone=everyone}}, form a {@formation={@line=line}}
+- {@unit={@everyone=everyone}}, make a {@formation={@skein=v-shape}}
+- {@unit={@horseArchers=horse archers}}, {@formation={@line=line}} formation
+- {@unit={@infantry=infantry}} make {@formation={@circle=ecircle}}
+- {@unit={@infantry=infantry}}, form a {@formation={@shieldWall=shield wall}}!
+- {@unit={@infantry=infantry}}, {@formation={@shieldWall=shields}} up!
+- {@unit={@horseArchers=mounted archers}} form a {@formation={@shieldWall=shield wall}}
+- {@unit={@horseArchers=mounted archers}}, {@formation={@square=square}} formation!
+- {@unit={@everyone=soldiers}} former {@formation={@shieldWall=shieldwall}}
+- {@unit={@cavalry=unit three}} {@formation={@square=square}}
+
+
+@ intent createFormation usesFeature formation
+
+# delegateCommand
+- {@unit={@archers=archers}}, take charge
+- {@unit={@cavalry=cavalry}}, you decide
+- {@unit={@everyone=everyone}}, sergeants in charge!
+- {@unit={@horseArchers=horse archers}}, sergeants, take over command!
+- {@unit={@infantry=infantry}}, take command
+- {@unit={@horseArchers=mounted archers}}, sergeants, take command!
+- {@unit={@everyone=soldiers}}, take command!
+
+
+# dismount
+- {@unit={@cavalry=cavalry}}, get off your horses!
+- {@unit={@horseArchers=horse archers}}, dismount!
+- {@unit={@cavalry=riders}} dismount
+
+
+# faceEnemy
+- {@unit={@archers=archers}}, face the enemy!
+- {@unit={@everyone=everyone}}, look at the enemy!
+- {@unit={@cavalry=horsemen}} advance face the enemy.
+- {@unit={@unit6=unit 6}} face enemy
+- {@unit={@everyone=units}}, turn towards the enemy!
+
+
+# fallBack
+- {@unit={@archers=archers}} give way
+- {@unit={@archers=archers}}, fall back!
+- {@unit={@cavalry=cavalry}} fall back
+- {@unit={@cavalry=cavalry}} let them come
+- {@unit={@cavalry=cavalry}}, give way!
+- {@unit={@everyone=everyone}}, come back!
+- {@unit={@infantry=footmen}} fall back
+- {@unit={@horseArchers=mounted archers}}, let them advance!
+- {@unit={@cavalry=riders}}, move backwards!
+- {@unit={@everyone=soldiers}} fall back
+
+
+# fireAtWill
+- {@unit={@archers=archers}}, fire at will!
+- {@unit={@everyone=everyone}} fire at will
+- {@unit={@infantry=infantry}}, fire!
+- {@unit={@horseArchers=mounted archers}} fire
+
+
+# follow
+- {@unit={@archers=archers}}, follow me
+- {@unit={@archers=bowman}} follow
+- {@unit={@cavalry=horsemen}} to my side
+- {@unit={@infantry=infantry}}, on my flank!
+- {@unit={@horseArchers=mounted archers}}, after me!
+
+
+# holdFire
+- {@unit={@archers=archers}}, hold fire!
+- {@unit={@archers=bowmen}} hold fire
+- {@unit={@horseArchers=horse archers}}, hold your arrows!
+- {@unit={@horseArchers=mounted archers}} halt fire
+- {@unit={@horseArchers=mounted archers}}, don't shoot!
+
+
+# mount
+- {@unit={@cavalry=cavalry}}, mount your horses!
+- {@unit={@everyone=everyone}}, get on your horses!
+- {@unit={@horseArchers=horse archers}}, mount!
+- {@unit={@cavalry=riders}} on your horses
+
+
+# moveToPosition
+- {@unit={@archers=archers}} move
+- {@unit={@archers=archers}} to position
+- {@unit={@cavalry=cavalry}} move
+- {@unit={@everyone=everyone}} move to position
+- {@unit={@horseArchers=horse archers}} to here
+- {@unit={@everyone=soldiers}} go
+- {@unit={@unit5=unit five}} move to position
+- {@unit={@infantry=unit one}} move
+
+
+# None
+- {@unit={@archers=archers}}
+- {@unit={@archers=archers}} former hold will
+- {@unit={@archers=bowman}}
+- {@unit={@archers=bowmen}}
+- {@unit={@cavalry=cavalry}}
+- {@unit={@infantry=footmen}}
+- {@unit={@horseArchers=horse archers}}
+- {@unit={@cavalry=horsemen}}
+- {@unit={@infantry=infantry}}
+- {@unit={@horseArchers=mounted archers}}
+- nevermind
+- {@unit={@infantry=soldiers}}
+- uhm
+
+
+# retreat
+- {@unit={@archers=archers}}, run!
+- {@unit={@archers=bowman}} flea
+- {@unit={@cavalry=cavalry}}, flee!
+- {@unit={@everyone=everyone}}, retreat!
+- {@unit={@horseArchers=mounted archers}}, save yourselves!
+- {@unit={@everyone=soldiers}}, run away!
+
+
+# stop
+- {@unit={@archers=archers}}, stand your ground!
+- {@unit={@cavalry=cavalry}}, stop
+- {@unit={@everyone=everyone}}, stop!
+- {@unit={@horseArchers=horse archers}} stop
+- {@unit={@infantry=infantry}} halt
+- {@unit={@horseArchers=mounted archers}}, halt!
+
+
+> # Entity definitions
+
+@ ml formation
+    - @ ml circle usesFeature circle
+    - @ ml column usesFeature column
+    - @ ml line usesFeature line
+    - @ ml loose usesFeature loose
+    - @ ml scatter usesFeature scatter
+    - @ ml shieldWall usesFeature shieldWall
+    - @ ml skein usesFeature skein
+    - @ ml square usesFeature square
+
+
+@ ml unit
+    - @ ml archers usesFeature archers
+    - @ ml infantry usesFeature infantry
+    - @ ml everyone usesFeature everyone
+    - @ ml cavalry usesFeature cavalry
+    - @ ml horseArchers usesFeature horseArchers
+    - @ ml unit5 usesFeature unit5
+    - @ ml unit6 usesFeature unit6
+    - @ ml unit7 usesFeature unit7
+    - @ ml unit8 usesFeature unit8
+
+
+
+> # PREBUILT Entity definitions
+
+
+> # Phrase list definitions
+
+@ phraselist horseArchers(interchangeable) disabledForAllModels = 
+	- horse archers,mounted archers,fourth group,group four,fourth unit,unit four,fourth formation,formation four,unit 4,group 4,formation 4
+
+@ phraselist infantry(interchangeable) disabledForAllModels = 
+	- infantry,footmen,footman,first group,group one,first unit,unit one,first formation,formation one,group 1,unit 1,formation 1
+
+@ phraselist archers(interchangeable) disabledForAllModels = 
+	- archers,bowmen,bowman,second group,group two,second unit,unit two,second formation,formation two,group 2,unit 2,formation 2
+
+@ phraselist cavalry(interchangeable) disabledForAllModels = 
+	- cavalry,riders,horsemen,horsman,third group,group three,third unit,unit three,third formation,formation three,unit 3,group 3,formation 3
+
+@ phraselist circle(interchangeable) disabledForAllModels = 
+	- circle,ring
+
+@ phraselist loose(interchangeable) disabledForAllModels = 
+	- loose,spread out
+
+@ phraselist line(interchangeable) disabledForAllModels = 
+	- line
+
+@ phraselist shieldWall(interchangeable) disabledForAllModels = 
+	- shield wall,shields up
+
+@ phraselist square(interchangeable) disabledForAllModels = 
+	- square,block
+
+@ phraselist skein(interchangeable) disabledForAllModels = 
+	- skein,v-shape,chevron
+
+@ phraselist column(interchangeable) disabledForAllModels = 
+	- column
+
+@ phraselist scatter(interchangeable) disabledForAllModels = 
+	- scatter,disperse
+
+@ phraselist everyone(interchangeable) disabledForAllModels = 
+	- everyone,all of you,everybody,units,soldiers,all units,men
+
+@ phraselist unit5(interchangeable) disabledForAllModels = 
+	- fifth group,group five,fifth unit,unit five,fifth formation,formation five,group 5,unit 5,formation 5
+
+@ phraselist unit6(interchangeable) disabledForAllModels = 
+	- sixth group,group six,sixth unit,unit six,sixth formation,formation six,group 6,unit 6,formation 6
+
+@ phraselist unit7(interchangeable) disabledForAllModels = 
+	- seventh group,group seven,seventh unit,unit seven,seventh formation,formation seven,unit 7,group 7,formation 7
+
+@ phraselist unit8(interchangeable) disabledForAllModels = 
+	- group eight,eighth group,eighth unit,unit eight,eighth formation,formation eight,unit 8,group 8,formation 8
+
+
+> # List entities
+
+> # RegEx entities
+
+
